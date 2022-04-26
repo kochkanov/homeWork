@@ -17,11 +17,10 @@ export const NewForm = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // lifting up
-    // функция, которая пришла с компоненты App
+  
     props.onSaveData({ name, email, number });
 
-    // очистка
+  
     setName("");
     setNumber("");
     setEmail("");
