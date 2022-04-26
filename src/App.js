@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import FormList from "./forms/FormList";
+import { NewForm } from "./forms/NewForm";
 
 function App() {
+  const [data, setData] = useState([]);
+
+  // функция, которая передается как пропс newForm
+  // и будет добавлять новые данные в data
+  function saveFormDatas(formData) {
+    // ...prevData это прежние данные, formData данные которые пришли с компонента newForm
+    setData((prevData) => [...prevData, formData]);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* new form компонент, который создает тудушки */}
+      <NewForm onSaveData={saveFormDatas} />
+      {/* formlist компонент, который рендерит тудушки (визуализирует) */}
+      <FormList data={data} />
     </div>
   );
 }
