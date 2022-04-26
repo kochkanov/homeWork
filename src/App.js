@@ -5,11 +5,11 @@ import { NewForm } from "./forms/NewForm";
 function App() {
   const [data, setData] = useState([]);
 
-  // функция, которая передается как пропс newForm
-  // и будет добавлять новые данные в data
+
   function saveFormDatas(formData) {
     // ...prevData это прежние данные, formData данные которые пришли с компонента newForm
     setData((prevData) => [...prevData, formData]);
+    
   }
   return (
     <div className="App">
