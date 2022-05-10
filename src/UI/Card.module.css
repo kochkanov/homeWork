@@ -1,0 +1,9 @@
+.card{
+   /* display: flex;
+   justify-content: center; */
+   border: 1px solid;
+   display: flex;
+   flex-flow: row wrap;
+   
+
+}
